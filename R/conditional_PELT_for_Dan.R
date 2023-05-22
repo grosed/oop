@@ -78,7 +78,8 @@ costMatrix_c = function(x, qnt) {
   K = length(qnt)
   
   C = matrix(nr = N, nc = N)
-  qnt0 = c(0, qnt, Inf)
+  # qnt0 = c(0, qnt, Inf)
+  qnt0 = c(-Inf, qnt, Inf)
 
   
   for (i in 1:N){
@@ -249,7 +250,7 @@ PELT_max = function (x, qnt, thr.c=3) {
 ########## Example
 
 
-
+set.seed(0)
 # single change point at (1/2)
 int.length = 200
 true.cpt <- c(int.length)+1
